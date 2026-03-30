@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dga0rymhj14sa"]
+
+[ext_resource type="Script" uid="uid://cshkeee3fhald" path="res://LimeVoice/Samples/BasicVoiceChat/VoiceChatSample.cs" id="1_sample"]
+
+[node name="BasicVoiceChat" type="Control" unique_id=1263902420]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sample")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1496750321]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -230.0
+offset_right = 200.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ServerIP" type="LineEdit" parent="VBox" unique_id=1537562678]
+layout_mode = 2
+text = "69.165.65.28"
+placeholder_text = "服务器 IP（如 127.0.0.1）"
+
+[node name="Port" type="LineEdit" parent="VBox" unique_id=2053049364]
+layout_mode = 2
+text = "7848"
+placeholder_text = "UDP 端口"
+
+[node name="AppId" type="LineEdit" parent="VBox" unique_id=149718951]
+layout_mode = 2
+text = "100747bde07abc94"
+placeholder_text = "App ID（8位十六进制）"
+
+[node name="RoomId" type="LineEdit" parent="VBox" unique_id=739608773]
+layout_mode = 2
+text = "room_1"
+placeholder_text = "房间 ID"
+
+[node name="UserId" type="LineEdit" parent="VBox" unique_id=687668221]
+layout_mode = 2
+text = "godot_player1"
+placeholder_text = "用户 ID"
+
+[node name="AppKey" type="LineEdit" parent="VBox" unique_id=1359296897]
+layout_mode = 2
+text = "da6d12160a3b3f7151a0ec574d1212860c0c0bc92d439e02ea91d5424c116086"
+placeholder_text = "Admin Key（仅调试用）"
+secret = true
+
+[node name="Buttons" type="HBoxContainer" parent="VBox" unique_id=499264047]
+layout_mode = 2
+
+[node name="ConnectBtn" type="Button" parent="VBox/Buttons" unique_id=54230072]
+layout_mode = 2
+text = "连接"
+
+[node name="JoinBtn" type="Button" parent="VBox/Buttons" unique_id=1176072603]
+layout_mode = 2
+text = "加入房间"
+
+[node name="LeaveBtn" type="Button" parent="VBox/Buttons" unique_id=366051980]
+layout_mode = 2
+text = "离开房间"
+
+[node name="MuteBtn" type="Button" parent="VBox/Buttons" unique_id=1661746708]
+layout_mode = 2
+text = "静音"
+
+[node name="StatusLabel" type="Label" parent="VBox" unique_id=1238533051]
+layout_mode = 2
+text = "未连接"
+
+[node name="LocalMicLabel" type="Label" parent="VBox" unique_id=510045328]
+layout_mode = 2
+text = "[麦克风] 待机"
