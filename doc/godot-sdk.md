@@ -140,7 +140,7 @@ public partial class GameVoice : Node
         _client.OnError  += (code, msg) => GD.PrintErr($"错误 {code}: {msg}");
 
         // 连接服务器（Token 需从你的游戏后端获取）
-        _client.ConnectToServer("69.165.65.28", 7848);
+        _client.ConnectToServer("45.207.215.167", 7848);
         _client.JoinRoom("appId", "roomId", "userId", "token");
     }
 
@@ -180,7 +180,7 @@ public partial class GameVoice : Node
         _client.OnError        += (c, m)     => GD.PrintErr($"错误 {c}: {m}");
 
         // 步骤 1：连接服务器
-        _client.ConnectToServer("69.165.65.28", 7848);
+        _client.ConnectToServer("45.207.215.167", 7848);
 
         // 步骤 2：从你的游戏后端获取 Token，然后加入房间
         _ = GetTokenAndJoin();
@@ -235,7 +235,7 @@ Godot 客户端 使用 Token 加入房间
 游戏后端请求示例：
 
 ```
-POST http://69.165.65.28:8848/api/v1/apps/{appId}/token
+POST http://45.207.215.167:8848/api/v1/apps/{appId}/token
 X-App-Key: your-app-key
 Content-Type: application/json
 
@@ -265,7 +265,7 @@ Content-Type: application/json
 // 仅供开发测试，生产环境请勿使用
 private async Task FetchTokenForDebug(string appId, string roomId, string userId)
 {
-    string url  = $"http://69.165.65.28:8848/api/v1/apps/{appId}/token";
+    string url  = $"http://45.207.215.167:8848/api/v1/apps/{appId}/token";
     string body = $"{{\"user_id\":\"{userId}\",\"room_id\":\"{roomId}\",\"ttl_seconds\":3600}}";
 
     using var http    = new SysHttpClient();
@@ -327,7 +327,7 @@ SDK 的核心类，以 **Autoload** 方式运行，通过 `LimeVoiceClient.Insta
 | `port` | `int` | UDP 端口，默认 `7848` |
 
 ```csharp
-_client.ConnectToServer("69.165.65.28", 7848);
+_client.ConnectToServer("45.207.215.167", 7848);
 ```
 
 > 调用后立即触发 `OnConnected`，此时尚未加入任何房间。
@@ -636,7 +636,7 @@ Godot WebGL 导出不支持自定义 UDP Socket（浏览器安全限制），本
 **Q：调用 JoinRoom 后迟迟没有触发 OnJoined？**
 
 A：检查以下几点：
-1. `host` 填写 `69.165.65.28`，`port` 填写 `7848`
+1. `host` 填写 `45.207.215.167`，`port` 填写 `7848`
 2. Token 是否有效，可通过 `OnError` 事件查看具体错误码
 3. 防火墙是否放行了 UDP `7848` 端口
 4. 手机端测试时需确保客户端和服务端网络互通

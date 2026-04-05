@@ -723,9 +723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ef8eec5bc7d7045b02bbe44e487d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VoiceChatSample
-  Host: 69.165.65.28
+  Host: 45.207.215.167
   Port: 7848
-  ApiBase: http://69.165.65.28:8848
+  ApiBase: http://45.207.215.167:8848
   AppKey: da6d12160a3b3f7151a0ec574d1212860c0c0bc92d439e02ea91d5424c116086
   AppId: 100747bde07abc94
   RoomId: room_1
